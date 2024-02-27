@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Instances = () => {
   const [instances, setInstances] = useState([]);
@@ -30,6 +31,9 @@ const Instances = () => {
           </div>
         ))}
       </div>
+      <button>
+        <Link to='/add'>Add New Instance</Link>
+      </button>
     </div>
   );
 };
