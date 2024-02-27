@@ -9,11 +9,16 @@
 
 .instances{
     display: flex;
+    gap: 10px;
 }
 
 .instance{
     flex: 1;
     /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
 }
 
 img{
@@ -21,4 +26,32 @@ img{
     height: 300px;
     object-fit: cover;
     background-color: rgb(194, 248, 244);
+}
+
+.delete{
+    border: none;
+    padding: 3px 6px;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid rgb(245,191,191);
+    color: rgb(242,100,100);
+}
+
+.delete:hover{
+    background-color: red;
+    color: white;
+}
+
+.update{
+    border: none;
+    padding: 3px 6px;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid rgb(204,204,243);
+    color: rgb(139,139,234);
+}
+
+.update:hover{
+    background-color: rgb(139,139,234);
+    color: white;
 }

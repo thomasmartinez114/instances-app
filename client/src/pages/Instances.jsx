@@ -28,6 +28,8 @@ const Instances = () => {
             <h2>{instance.title}</h2>
             <p>{instance.prodURL}</p>
             <p>{instance.prodAdmin}</p>
+            <button className='delete'>Delete</button>
+            <button className='update'>Update</button>
           </div>
         ))}
       </div>
