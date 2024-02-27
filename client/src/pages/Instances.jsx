@@ -35,7 +35,7 @@ const Instances = () => {
           <div className='instance' key={instance.id}>
             {instance.image && <img src={instance.image} alt='' />}
             <h2>{instance.title}</h2>
-            <p>{instance.prodURL}</p>
+            <a href={instance.prodURL}>Production URL</a>
             <p>{instance.prodAdmin}</p>
             <button
               className='delete'

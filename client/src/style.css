@@ -22,10 +22,10 @@
 }
 
 img{
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-    background-color: rgb(194, 248, 244);
+    width: 150px;
+    height: 150px;
+    /* object-fit: cover; */
+    /* background-color: rgb(194, 248, 244); */
 }
 
 .delete{
