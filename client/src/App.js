@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Instances from './pages/Instances';
 import Add from './pages/Add';
 import Update from './pages/Update';
+import './style.css';
 
 function App() {
   return (
