@@ -44,6 +44,16 @@ app.post('/instances', (req, res) => {
   });
 });
 
+app.delete('/instances/:id', (req, res) => {
+  const instanceId = req.params.id;
+  const q = 'DELETE FROM instances WHERE id = ?';
+
+  db.query(q, [instanceId], (err, data) => {
+    if (err) return res.json(err);
+    return res.json('Instance has been deleted!');
+  });
+});
+
 app.listen(8800, () => {
   console.log('Connected to backend!');
 });

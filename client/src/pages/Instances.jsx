@@ -18,6 +18,15 @@ const Instances = () => {
     fetchAllInstances();
   }, []);
 
+  const handleDelete = async id => {
+    try {
+      await axios.delete('http://localhost:8800/instances/' + id);
+      window.location.reload();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div>
       <h1>Site Instances</h1>
@@ -28,7 +37,12 @@ const Instances = () => {
             <h2>{instance.title}</h2>
             <p>{instance.prodURL}</p>
             <p>{instance.prodAdmin}</p>
-            <button className='delete'>Delete</button>
+            <button
+              className='delete'
+              onClick={() => handleDelete(instance.id)}
+            >
+              Delete
+            </button>
             <button className='update'>Update</button>
           </div>
         ))}
