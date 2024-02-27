@@ -54,6 +54,26 @@ app.delete('/instances/:id', (req, res) => {
   });
 });
 
+app.put('/instances/:id', (req, res) => {
+  const instanceId = req.params.id;
+  const q =
+    'UPDATE instances SET `title` = ?, `prodURL` = ?, `prodAdmin` = ?, `qaURL` = ?, `qaAdmin` = ?, `image` = ? WHERE id = ?';
+
+  const values = [
+    req.body.title,
+    req.body.prodURL,
+    req.body.prodAdmin,
+    req.body.qaURL,
+    req.body.qaAdmin,
+    req.body.image,
+  ];
+
+  db.query(q, [...values, instanceId], (err, data) => {
+    if (err) return res.json(err);
+    return res.json('Instance has been updated!');
+  });
+});
+
 app.listen(8800, () => {
   console.log('Connected to backend!');
 });

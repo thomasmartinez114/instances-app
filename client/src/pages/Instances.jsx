@@ -43,7 +43,9 @@ const Instances = () => {
             >
               Delete
             </button>
-            <button className='update'>Update</button>
+            <button className='update'>
+              <Link to={`/update/${instance.id}`}>Update</Link>
+            </button>
           </div>
         ))}
       </div>
