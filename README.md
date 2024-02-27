@@ -1,7 +1,7 @@
 Rendering site instances
 
 - Backend
-    - >> node server.js
+    - >> npm server.js
     - Packages
         - Express
         - Nodemon
