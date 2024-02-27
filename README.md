@@ -6,3 +6,10 @@ Rendering site instances
         - Express
         - Nodemon
         - MySQL
+        - CORS
+            - to allow frontend to communicate with backend
+
+- Frontend
+    - Packages
+        - Axios
+        - React-router-dom
