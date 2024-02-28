@@ -15,6 +15,4 @@ Rendering site instances
         - React-router-dom
     - UI02 Packages
         - npm install bootstrap
-        - npm install @popperjs/core --save
-        - npm install sass
-        - npm install react-paginate --save
+        - npm install styled-components
