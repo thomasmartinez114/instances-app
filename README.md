@@ -10,6 +10,11 @@ Rendering site instances
             - to allow frontend to communicate with backend
 
 - Frontend
-    - Packages
+    - UI01 Packages
         - Axios
         - React-router-dom
+    - UI02 Packages
+        - npm install bootstrap
+        - npm install @popperjs/core --save
+        - npm install sass
+        - npm install react-paginate --save
