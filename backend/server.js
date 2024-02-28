@@ -14,11 +14,11 @@ const db = mysql.createConnection({
   database: 'gnie',
 });
 
-app.get('/', (req, res) => {
+app.get('/api/', (req, res) => {
   res.json('hello this is the backend');
 });
 
-app.get('/instances', (req, res) => {
+app.get('/api/instances', (req, res) => {
   const q = 'SELECT * FROM instances';
   db.query(q, (err, data) => {
     if (err) return res.json(err);
@@ -26,7 +26,7 @@ app.get('/instances', (req, res) => {
   });
 });
 
-app.post('/instances', (req, res) => {
+app.post('/api/instances', (req, res) => {
   const q =
     'INSERT INTO instances (`title`, `prodURL`, `prodAdmin`, `qaURL`, `qaAdmin`,  `image`) VALUES (?)';
   const values = [
@@ -44,7 +44,7 @@ app.post('/instances', (req, res) => {
   });
 });
 
-app.delete('/instances/:id', (req, res) => {
+app.delete('/api/instances/:id', (req, res) => {
   const instanceId = req.params.id;
   const q = 'DELETE FROM instances WHERE id = ?';
 
@@ -54,7 +54,7 @@ app.delete('/instances/:id', (req, res) => {
   });
 });
 
-app.put('/instances/:id', (req, res) => {
+app.put('/api/instances/:id', (req, res) => {
   const instanceId = req.params.id;
   const q =
     'UPDATE instances SET `title` = ?, `prodURL` = ?, `prodAdmin` = ?, `qaURL` = ?, `qaAdmin` = ?, `image` = ? WHERE id = ?';
