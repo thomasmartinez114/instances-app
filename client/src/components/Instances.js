@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../styles.css';
 // import { Link } from 'react-router-dom';
 
 const Instances = () => {
@@ -29,77 +30,22 @@ const Instances = () => {
 
   return (
     <div>
-      <div className='container'>
-        <div className='row'>
-          <div className='col-4'>
-            <div className='card'>
-              <img
-                src='https://ccscentralstorage.blob.core.windows.net/staging/images/gnie-tracking/calottery-logo.png'
-                alt=''
-                className='card-img-top'
-              />
-              <div className='card-body'>
-                <h5 className='card-title'>Card Title</h5>
-                <p className='card-text'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quisquam tempora similique consequatur autem unde ipsum!
-                  Nesciunt modi velit ea repellat explicabo inventore
-                  accusantium dolore neque minima, est ullam molestiae minus!
-                  Quam explicabo consectetur repellat non unde error quia
-                  beatae? Dolores numquam voluptatem neque rerum labore aliquam
-                  quo officia inventore! Facere illo assumenda eligendi? Quos,
-                  dolorem. Veniam hic dolorum praesentium itaque.
-                </p>
-              </div>
+      {instances.map(instance => (
+        <div className='card'>
+          <div className='card__title'>{instance.title}</div>
+          <div className='card__body'>
+            <div className='location'>
+              <p>{instance.prodURL}</p>
+              <p>{instance.prodAdmin}</p>
+              <p>{instance.qaURL}</p>
+              <p>{instance.qaAdmin}</p>
             </div>
-          </div>
-          <div className='col-4'>
-            <div className='card'>
-              <img
-                src='https://ccscentralstorage.blob.core.windows.net/staging/images/gnie-tracking/calottery-logo.png'
-                alt=''
-                className='card-img-top'
-              />
-              <div className='card-body'>
-                <h5 className='card-title'>Card Title</h5>
-                <p className='card-text'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quisquam tempora similique consequatur autem unde ipsum!
-                  Nesciunt modi velit ea repellat explicabo inventore
-                  accusantium dolore neque minima, est ullam molestiae minus!
-                  Quam explicabo consectetur repellat non unde error quia
-                  beatae? Dolores numquam voluptatem neque rerum labore aliquam
-                  quo officia inventore! Facere illo assumenda eligendi? Quos,
-                  dolorem. Veniam hic dolorum praesentium itaque.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className='col-4'>
-            <div className='card'>
-              <img
-                src='https://ccscentralstorage.blob.core.windows.net/staging/images/gnie-tracking/calottery-logo.png'
-                alt=''
-                className='card-img-top'
-              />
-              <div className='card-body'>
-                <h5 className='card-title'>Card Title</h5>
-                <p className='card-text'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quisquam tempora similique consequatur autem unde ipsum!
-                  Nesciunt modi velit ea repellat explicabo inventore
-                  accusantium dolore neque minima, est ullam molestiae minus!
-                  Quam explicabo consectetur repellat non unde error quia
-                  beatae? Dolores numquam voluptatem neque rerum labore aliquam
-                  quo officia inventore! Facere illo assumenda eligendi? Quos,
-                  dolorem. Veniam hic dolorum praesentium itaque.
-                </p>
-              </div>
+            <div className='card__image'>
+              <img src={instance.image} alt={instance.title} />
             </div>
           </div>
         </div>
-        <div className='row'></div>
-      </div>
+      ))}
     </div>
   );
 };
