@@ -22,6 +22,17 @@ function App() {
 
   return (
     <div className='App'>
+      <div class='btn-group' role='group' aria-label='Basic example'>
+        <button type='button' class='btn btn-secondary'>
+          All
+        </button>
+        <button type='button' class='btn btn-secondary'>
+          Internal
+        </button>
+        <button type='button' class='btn btn-secondary'>
+          Retailer Self-Service
+        </button>
+      </div>
       <div className='cards-container'>
         {instances.map(instance => (
           <div className='card'>

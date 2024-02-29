@@ -16,3 +16,6 @@ Rendering site instances
     - UI02 Packages
         - npm install bootstrap
         - npm install styled-components
+        - Backend
+            - npm i dotenv
+                - for database connection
