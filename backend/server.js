@@ -19,7 +19,7 @@ app.get('/api/', (req, res) => {
 });
 
 app.get('/api/instances', (req, res) => {
-  const q = 'SELECT * FROM instances';
+  const q = 'SELECT * FROM instances ORDER BY title';
   db.query(q, (err, data) => {
     if (err) return res.json(err);
     return res.json(data);
