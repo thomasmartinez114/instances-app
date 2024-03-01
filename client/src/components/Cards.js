@@ -17,21 +17,8 @@ const Cards = () => {
     fetchAllInstances();
   }, []);
 
-  const instanceItems = [...new Set(instances.map(val => val.state))];
-
   return (
     <div className='container'>
-      <div className='d-flex justify-content-center'>
-        <button className='btn-dark text-white p-1 px-2 mx-5 btn fw-bold'>
-          All
-        </button>
-        {instanceItems.map(val => (
-          <button className='btn-dark text-white p-1 px-2 mx-5 btn fw-bold'>
-            {val}
-          </button>
-        ))}
-        ;
-      </div>
       <div className='row justify-content-center'>
         {instances.map(instance => (
           <div className='card col-xl-3 col-lg-5 col-md-12 col-sm-12 my-3 border-0'>
@@ -40,7 +27,7 @@ const Cards = () => {
                 <img src={instance.image} alt={instance.title} />
               </div>
               <div className='card__state'>
-                <p>{instance.state}</p>
+                <span class='badge bg-secondary'>{instance.state}</span>
               </div>
             </div>
             <div className='card__title'>{instance.title}</div>
